@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body, html { 
+      background: transparent !important; 
+      margin: 0; 
+      padding: 0;
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      overflow: hidden;
+    }
+    #math-output { 
+      font-size: 40px; 
+      color: #ffffff; 
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="math-output"></div>
+  <script>
+    window.addEventListener('message', function(event) {
+      const output = document.getElementById('math-output');
+      output.innerHTML = `\\( ${event.data} \\)`;
+      MathJax.typesetPromise([output]);
+    });
+  </script>
+</body>
+  </html>
+  
